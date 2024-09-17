@@ -1,0 +1,4 @@
+Created by Osareme Davis
+
+I will be using VMware on my Windows laptop to run a virtualized Kali installation. I have everything set up and successfully visited the "dangerous website" from the instructions.
+This laptop only has 8GB of memory which makes me a bit anxious with the VM wanted 2GB to itself and Windows already naturally eating up about 4GB, but I think I should still be in the clear.
