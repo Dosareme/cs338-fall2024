@@ -1,0 +1,49 @@
+Created by Osareme Davis
+
+level 1
+ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+Simply used "cat" to view the file's contents and copy-pasted the password.
+
+level 2
+263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+Had to specify the full path name "./-" because "-" is a special character in the terminal.
+
+level 3
+MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+Using "cat s[tab]" correctly autocompleted the filename with escapes for the spaces
+
+level 4
+2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+Used "find" to see hidden files, and typed the filename for "cat" hassle free with [tab]
+
+level 5
+4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+Manually checked each file with "file" to find a type likely to be human readable, then "cat" to read it.
+
+level 6
+HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+Used "find -size 1033c" to search the directory for a file matching the spec in the instruction. 
+
+level 7
+morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+Used "cd .." to breach containment, then "find -user bandit7 -size 33c" to match the spec. Made an educated guess that the file named "bandit7.password" was relevant. Read its contents with "cat" and the pathname.
+
+level 8
+dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+Opened data.txt in vim, then used /millionth to search out the password.
+
+level 9
+4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+Used "sort data.txt | uniq -u" to give "uniq" sorted lines that would then match the spec by eliminating the lines with duplicates.
+
+level 10
+FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+Essentially just the level 8 trick: /==, then find next "n" until I found a matching string for the password.
+
+level 11
+dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+used "base64 -d data.txt" to decode the file and read the password.
+
+level 12
+7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+used "tr a-zA-Z n-za-mN-ZA-M < data.txt" to decrypt the substitution cipher.
