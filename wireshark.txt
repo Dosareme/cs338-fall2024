@@ -1,0 +1,26 @@
+Created by Osareme Davis
+
+/////////////////daytime//////////////////////
+1	0.000000000	192.168.217.128	129.6.15.28	TCP	74	47328 → 13 [SYN] Seq=0 Win=32120 Len=0 MSS=1460 SACK_PERM TSval=1945186692 TSecr=0 WS=128
+2	0.058734811	129.6.15.28	192.168.217.128	TCP	60	13 → 47328 [SYN, ACK] Seq=0 Ack=1 Win=64240 Len=0 MSS=1460
+3	0.058857540	192.168.217.128	129.6.15.28	TCP	54	47328 → 13 [ACK] Seq=1 Ack=1 Win=32120 Len=0
+
+2) 	13
+3) 	The client port is so that responses from the host are routed to the correct process.
+
+4	0.108321238	129.6.15.28	192.168.217.128	DAYTIME	105	DAYTIME Response
+
+5)	[SYN] and [ACK] are parts of the TCP connection. They refer each step of establishing the connection.
+6) 	The client initiated the closing because it sent the [FIN] packet first.
+
+///////////////////HTTP/////////////////////////
+1)	It looks like three connections: there are a set of [SYN][SYN. ACK][ACK] packets at the beginning of the log for each connection.
+2)	Yes. Wireshark shows a HTTP packet sent from the client to the host with the GET command:
+10	0.039077911	192.168.217.128	172.233.221.124	HTTP	408	GET /index.html HTTP/1.1 
+
+3)	Yes, for the same reason as (2):
+14	0.282393008	192.168.217.128	172.233.221.124	HTTP	381	GET /jeff-square-colorado.jpg HTTP/1.1 
+
+///////////////////questions/////////////////////
+WHAT is happening in the bottom half of the window???
+What does "Length" refer to? 
