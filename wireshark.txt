@@ -14,7 +14,17 @@ Created by Osareme Davis
 6) 	The client initiated the closing because it sent the [FIN] packet first.
 
 ///////////////////HTTP/////////////////////////
-1)	It looks like three connections: there are a set of [SYN][SYN. ACK][ACK] packets at the beginning of the log for each connection.
+1)	It looks like three connections: there are a set of [SYN][SYN. ACK][ACK] packets at the beginning of the log for each connection:
+1	0.000000000	192.168.217.128	172.233.221.124	TCP	74	35590 → 80 [SYN] Seq=0 Win=32120 Len=0 MSS=1460 SACK_PERM TSval=1015647341 TSecr=0 WS=128
+2	0.000210845	192.168.217.128	172.233.221.124	TCP	74	35594 → 80 [SYN] Seq=0 Win=32120 Len=0 MSS=1460 SACK_PERM TSval=1015647342 TSecr=0 WS=128
+3	0.000273762	192.168.217.128	172.233.221.124	TCP	74	35606 → 80 [SYN] Seq=0 Win=32120 Len=0 MSS=1460 SACK_PERM TSval=1015647342 TSecr=0 WS=128
+4	0.037324291	172.233.221.124	192.168.217.128	TCP	60	80 → 35590 [SYN, ACK] Seq=0 Ack=1 Win=64240 Len=0 MSS=1460
+5	0.037326064	172.233.221.124	192.168.217.128	TCP	60	80 → 35594 [SYN, ACK] Seq=0 Ack=1 Win=64240 Len=0 MSS=1460
+6	0.037326174	172.233.221.124	192.168.217.128	TCP	60	80 → 35606 [SYN, ACK] Seq=0 Ack=1 Win=64240 Len=0 MSS=1460
+7	0.037667793	192.168.217.128	172.233.221.124	TCP	54	35590 → 80 [ACK] Seq=1 Ack=1 Win=32120 Len=0
+8	0.037865463	192.168.217.128	172.233.221.124	TCP	54	35594 → 80 [ACK] Seq=1 Ack=1 Win=32120 Len=0
+9	0.037911469	192.168.217.128	172.233.221.124	TCP	54	35606 → 80 [ACK] Seq=1 Ack=1 Win=32120 Len=0
+
 2)	Yes. Wireshark shows a HTTP packet sent from the client to the host with the GET command:
 10	0.039077911	192.168.217.128	172.233.221.124	HTTP	408	GET /index.html HTTP/1.1 
 
