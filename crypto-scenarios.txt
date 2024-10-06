@@ -1,0 +1,19 @@
+Created by Osareme Davis
+
+1.	First, Alice and Bob use Diffie-Hellman to exhcange a shared secret, to derive AES key K. From there, Alice can send her message M to Bob by C = AES(K, M) and he can decrypt it with AES_D(K, C).
+Using symmetric encryption is better suited for Alice's long message. Eve cannot obtain the shared secret easily from the Diffie-Hellman exchange, so she will not have the key K to decrypt the message.
+
+2.	First, Alice computes a signature Sig = E(S_A, H(M)). Alice sends Bob M||Sig, who is definitely in on the plan and can now verify the message: E(P_A, Sig) should equal H(M).
+By including the signature using Alice's secret key, Mal cannot modify the message without Bob's notice because the signature will no longer match when Bob verifies it. 
+
+3.	Alice and Bob use Diffie-Hellman to exchange a shared secret, and derive AES key K. From there, Alice computes her message C = AES(K, M), and additionally computes a signature Sig = E(S_A, H(M)). Alice sends Bob C||Sig, who is definitely in on the plan and can now decrypt and verify the message: AES_D(K, C) to get M, then H(M). To verify, E(P_A, Sig) should equal H(M).
+The signature can only be from Alice as it makes use of her Public/private key pair.
+
+4.	
+
+5.	Sig_CA = E(S_CA, H("bob.com"||P_B))
+
+6.	Bob should compute his own signature Sig_B = E(S_B, H(Cert_B)) and send Cert_B||Sig_B.
+
+7.	Mal could impersonate the certificate authority, and give themselves a certificate proving that they're "Bob".
+Or, Mal could attempt to intercept Bob's certificate request and insert their own public key instead.
